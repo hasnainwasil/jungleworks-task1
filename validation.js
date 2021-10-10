@@ -46,7 +46,7 @@ exports.signup = function (req, res,next) {
 exports.uploadImage = function (req, res,next) {
 	let body=req.body;
 	const userSchema = joi.object({
-		image_link: joi.string().email().required(),
+		image_link: joi.string().required(),
 		user_id: joi.number().required(),
 	});
 

@@ -6,7 +6,7 @@ const db=mysql.createConnection({
 	host : 'localhost',
 	user: 'root',
 	password:'',
-	database: 'jtable1',
+	database: 'fb_post',
 	connectionLimit: 50,
     queueLimit: 0,
     waitForConnection: true,
@@ -189,14 +189,15 @@ function uploadImage(req,res){
 		if(err) throw err;
 		console.log("IMAGE INSERTED",result);
 	})
+	res.send("IMAGE UPLOADED");
 }
 
 function fetchImage(req,res){
 	let body=req.body;
 	let sql='SELECT image FROM image_fb_post WHERE user_id = ? AND im_id = ?';
-	db.query(sql,[req.user_id,req.im_id],(err,result)=>{
+	db.query(sql,[body.user_id,body.im_id],(err,result)=>{
 		if(err) throw err;
-		res.send(result);
+		res.send(result[0].image);
 	})
 }
 
