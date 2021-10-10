@@ -4,48 +4,53 @@ exports.createdb = function (req, res) {
     service.createdb(req,res);
 }
 
-exports.createapi = function (req, res) {
-    service.createapi(req,res);
-}
-
 exports.signup = function (req, res) {
     service.signup(req,res);
 }
 
 exports.login = function (req, res) {
     service.login(req,res);
+    service.updateAccessToken(req,res);
 }
 
-exports.loginaccesstoken = function (req, res) {
-    service.loginaccesstoken(req,res);
+exports.loginUsingAccessToken = function (req, res) {
+    service.loginUsingAccessToken(req,res);
 }
 
 //For Posts:-
-exports.createpost = function (req, res) {
-    service.createpost(req,res);
+exports.createPost = function (req, res) {
+    service.createPost(req,res);
 }
 
-exports.deleteid = function (req, res) {
-    service.deleteid(req,res);
+exports.deleteUsingID = function (req, res) {
+    service.deleteUsingID(req,res);
 }
 
-exports.liked = function (req, res) {
-    service.liked(req,res);
+exports.likeOnPost = function (req, res) {
+    service.likeOnPost(req,res);
 }
 
-exports.comment = function (req, res) {
-    service.comment(req,res);
+exports.commentOnPost = function (req, res) {
+    service.commentOnPost(req,res);
 }
 
-exports.displaycomment = function (req, res) {
-    service.displaycomment(req,res);
+exports.displayComment = function (req, res) {
+    service.displayComment(req,res);
 }
 
-exports.createcommenttable = function (req, res) {
-    service.createcommenttable(req,res);
+exports.createCommentTable = function (req, res) {
+    service.createCommentTable(req,res);
 }
 
-exports.createtablepost = function (req, res){
-    service.createtablepost(req, res);
+exports.createPostTable = function (req, res){
+    service.createPostTable(req, res);
+}
+
+exports.uploadImage = function (req, res){
+    service.uploadImage(req, res);
+}
+
+exports.fetchImage = function (req, res){
+    service.fetchImage(req, res);
 }
 
